@@ -1342,7 +1342,7 @@ NSString * const PKRevealControllerRecognizesResetTapOnFrontViewKey = @"PKReveal
 {
     CGRect frame = CGRectZero;
     
-    if ([[[[[UIDevice currentDevice] systemVersion] componentsSeparatedByString:@"."] objectAtIndex:0] integerValue] >= 7) {
+    if (self.preventDrawUnderStatus && ([[[[[UIDevice currentDevice] systemVersion] componentsSeparatedByString:@"."] objectAtIndex:0] integerValue] >= 7)) {
         CGRect statusRect = [[UIApplication sharedApplication] statusBarFrame];
         frame.size = CGSizeMake([self leftViewMaxWidthRespectingOverdraw:NO], CGRectGetHeight(self.view.bounds) - statusRect.size.height);
         frame.origin = CGPointMake(0, statusRect.size.height);
