@@ -156,6 +156,7 @@ NSString * const PKRevealControllerRecognizesResetTapOnFrontViewKey = @"PKReveal
     {
         [self commonInitializer];
     }
+    _controllerOptions = [NSMutableDictionary dictionaryWithObjectsAndKeys:@NO,PKRevealControllerRecognizesPanningOnFrontViewKey,nil];
     
     return self;
 }
